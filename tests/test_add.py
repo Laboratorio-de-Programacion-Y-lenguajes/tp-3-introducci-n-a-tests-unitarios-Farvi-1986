@@ -19,12 +19,14 @@ def test_add_suma_positivos():
 #   - Sumar dos números decimales (float)
 #
 # Pista: podés usar @pytest.mark.parametrize para probar varios casos a la vez.
-#
-# Ejemplo de test parametrizado:
-#
-# @pytest.mark.parametrize("a,b,expected", [
-#     (..., ..., ...),
-#     (..., ..., ...),
-# ])
-# def test_add_parametrizado(a, b, expected):
-#     assert add(a, b) == expected
+
+@pytest.mark.parametrize("a, b, expected", [
+    (-5, -5, -10),        # Sumar dos números negativos
+    (8, -2, 6),          # Sumar un número positivo y uno negativo
+    (3, 0, 3),         # Sumar con cero
+    (1.5, 2.5, 4.0),     # Sumar dos números decimales (float)
+])
+
+def test_add_casos_especiales(a, b, expected):
+    """Verifica casos borde y diferentes tipos de números."""
+    assert add(a, b) == expected
