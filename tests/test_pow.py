@@ -24,7 +24,7 @@ def test_pow_base_positiva():
     (8, 0, 1.0),         # Cualquier número elevado a 0 es 1
     (24, 1, 24.0),       # Número elevado a 1 es el mismo número
     (-2, 4, 16.0),       # Base negativa con exponente par (positivo)
-    (8, 0.5, 3.0),       # Exponente decimal (raíz cuadrada)
+    (9, 0.5, 3.0),       # Exponente decimal (raíz cuadrada)
     (2, -1, 0.5),        # Extra: Exponente negativo
 ])
 def test_pow_varios_casos(a, b, esperado):
