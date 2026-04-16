@@ -19,7 +19,20 @@ def test_mean_lista_simple():
 #   - Lista vacía → debe lanzar ValueError
 #
 # Pista: para testear excepciones usá pytest.raises:
-#
-# def test_mean_lista_vacia():
-#     with pytest.raises(ValueError):
-#         mean([])
+
+def test_mean_un_elemento():
+    """Lista con un solo elemento"""
+    assert mean([10]) == 10.0
+
+def test_mean_negativos():
+    """Lista con números negativos"""
+    assert mean([-2, -4, -6]) == -4.0
+
+def test_mean_decimales():
+    """Lista con números decimales (float)."""
+    assert mean([1.5, 2.5, 5.0]) == 3.0
+
+def test_mean_lista_vacia():
+    """Verifica que lance ValueError si la lista está vacía"""
+    with pytest.raises(ValueError):
+        mean([])
